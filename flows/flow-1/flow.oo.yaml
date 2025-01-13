@@ -1,1 +1,21 @@
-nodes: []
+nodes:
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: epub_file_path
+          json_schema:
+            type: string
+            ui:widget: file
+      outputs_def:
+        []
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#1.py
+    title: "Python #1"
+    icon: ":logos:python:"
+    node_id: +python#1
+    inputs_from:
+      - handle: epub_file_path
+        value: /oomol-driver/oomol-storage/epub_speech/Sou Shen Ji - Shu Xia Ye Hu.epub

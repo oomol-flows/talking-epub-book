@@ -1,0 +1,18 @@
+{
+  "nodes": {
+    "+python#1": {
+      "contentWidth": 438.05434824896366,
+      "rfNode": {
+        "position": {
+          "x": 107,
+          "y": 127
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  }
+}
