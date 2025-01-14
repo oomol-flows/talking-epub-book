@@ -1,0 +1,28 @@
+inputs_def:
+  - handle: epub_file_path
+    json_schema:
+      type: string
+      ui:widget: file
+outputs_def:
+  - handle: titles
+    json_schema:
+      type: array
+      items:
+        type: string
+  - handle: spine_paths
+    json_schema:
+      type: array
+      items:
+        type: string
+  - handle: output_dir_path
+    json_schema:
+      type: string
+      ui:widget: dir
+ui:
+  default_width: 450
+executor:
+  name: python
+  options:
+    spawn: false
+    entry: __init__.py
+title: Extract spines from epub book
