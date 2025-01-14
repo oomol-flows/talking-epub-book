@@ -67,14 +67,13 @@ def _nav_list(epub_content: EpubContent) -> list[tuple[str, str]]:
   return nav_list
 
 def _gen_spines(epub_content: EpubContent, nav_list: list[tuple[str, str]]) -> list[tuple[str | None, str]]:
-  spines = epub_content.spines
   result: list[tuple[str | None, str]] = []
-
-  for index, spine in enumerate(spines):
-    if spine.media_type == "application/xhtml+xml":
-      href = _standardize_href(spine.href)
-      title = _nav_title(nav_list, href)
-      result.append((title, spine.path))
+  for spine in epub_content.spines:
+    if spine.media_type != "application/xhtml+xml":
+      continue
+    href = _standardize_href(spine.href)
+    title = _nav_title(nav_list, href)
+    result.append((title, spine.path))
   return result
 
 def _nav_title(nav_list: list[tuple[str, str]], checked_href: str):

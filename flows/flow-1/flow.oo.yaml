@@ -44,9 +44,3 @@ nodes:
             output_handle: binary
       - handle: encoding
         value: utf8
-  - task: self::extract_spines_from_epub_book
-    title: "Extract spines from epub book #1"
-    node_id: extract_spines_from_epub_book#1
-    inputs_from:
-      - handle: epub_file_path
-        value: /oomol-driver/oomol-storage/epub_speech/Sou Shen Ji - Shu Xia Ye Hu.epub

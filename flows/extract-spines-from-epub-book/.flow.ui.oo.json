@@ -1,0 +1,13 @@
+{
+  "nodes": {
+    "extract_spines_from_epub_book#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 444,
+          "y": 184
+        }
+      }
+    }
+  }
+}

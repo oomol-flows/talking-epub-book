@@ -1,0 +1,8 @@
+nodes:
+  - task: self::extract_spines_from_epub_book
+    title: "Extract spines from epub book #1"
+    node_id: extract_spines_from_epub_book#1
+    inputs_from:
+      - handle: epub_file_path
+      - handle: output_path
+        value:

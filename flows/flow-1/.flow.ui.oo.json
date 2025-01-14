@@ -1,19 +1,5 @@
 {
   "nodes": {
-    "+python#1": {
-      "contentWidth": 438.05434824896366,
-      "rfNode": {
-        "position": {
-          "x": 107,
-          "y": 127
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
-        }
-      }
-    },
     "speech#1": {
       "contentWidth": 599.6712477760606,
       "rfNode": {
