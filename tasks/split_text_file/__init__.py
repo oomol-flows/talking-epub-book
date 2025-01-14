@@ -2,8 +2,8 @@ import re
 import os
 
 from io import StringIO
+from shared import NLP
 from .read import read
-from .nlp import NLP
 
 def main(params: dict):
   file_path: str = params["file_path"]
