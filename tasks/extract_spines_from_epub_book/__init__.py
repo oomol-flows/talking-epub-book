@@ -26,6 +26,8 @@ def main(params: dict, context: Context):
   for i, (title, content) in enumerate(spines):
     if title is not None:
       current_title = title
+    if current_title is None and len(nav_list) > 0:
+      continue # nav 是存在的，却无法被导航到，可能是 styles 之类的页面
     no = _format_number(i, len(spines))
     file_path = os.path.join(output_dir_path, f"{no}.txt")
     with open(file_path, mode="w", encoding="utf-8") as file:

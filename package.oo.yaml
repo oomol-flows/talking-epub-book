@@ -8,4 +8,6 @@ scripts:
     pip install --upgrade pip
     pip install -r requirements.txt
 dependencies:
-  {}
+  azure-speech: 0.0.2
+  oomol-file: 0.0.1
+  oomol-transform: 0.0.2
