@@ -1,6 +1,7 @@
 import os
 
 from oocana import Context
+from shared import format_number
 from .spine_finder import Spines
 
 def main(params: dict, context: Context):
@@ -19,7 +20,7 @@ def main(params: dict, context: Context):
       if current_title is None and spines.has_nav:
         continue # nav 是存在的，却无法被导航到，可能是 styles 之类的页面
 
-      file_name = _format_number(i, spines.spines_len)
+      file_name = format_number(i, spines.spines_len)
       if current_title is not None:
         file_name += f"_{current_title}"
       file_name += ".txt"
@@ -31,10 +32,3 @@ def main(params: dict, context: Context):
           file.write("\n")
 
   return { "output_path": output_path }
-
-def _format_number(i: int, n: int) -> str:
-  i_str = str(i)
-  n_str = str(n)
-  num_zeros = len(n_str) - len(i_str)
-  formatted_i = "0" * num_zeros + i_str
-  return formatted_i

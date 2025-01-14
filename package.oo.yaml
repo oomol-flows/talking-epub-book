@@ -13,3 +13,4 @@ dependencies:
   azure-speech: 0.0.2
   oomol-file: 0.0.1
   oomol-transform: 0.0.2
+  oomol-preview: 0.0.1

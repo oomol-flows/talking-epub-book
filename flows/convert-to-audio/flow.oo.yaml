@@ -1,6 +1,6 @@
 nodes:
-  - task: self::split-text-file
-    title: "Convert file to audio #1"
+  - task: self::split_text_file
+    title: "Split text file"
     node_id: convert-to-audio#1
     inputs_from:
       - handle: file_path
@@ -10,3 +10,45 @@ nodes:
         value:
       - handle: chars_limit
         value: 700
+  - task: azure-speech::speech
+    title: "Speech #1"
+    node_id: speech#1
+    inputs_from:
+      - handle: text
+        from_node:
+          - node_id: generate_speech_tasks#1
+            output_handle: text
+      - handle: text_kind
+        value: text
+      - handle: region
+        value: eastasia
+      - handle: key
+      - handle: voice
+      - handle: granularity
+        value: none
+      - handle: output_path
+        value:
+        from_node:
+          - node_id: generate_speech_tasks#1
+            output_handle: audio_path
+  - task: self::generate_speech_tasks
+    title: Generate speech tasks
+    node_id: generate_speech_tasks#1
+    inputs_from:
+      - handle: fragments
+        from_node:
+          - node_id: convert-to-audio#1
+            output_handle: fragments
+      - handle: save_dir_path
+      - handle: title
+        from_node:
+          - node_id: convert-to-audio#1
+            output_handle: title
+  - task: oomol-preview::audio-preview
+    title: "Audio preview #1"
+    node_id: audio-preview#1
+    inputs_from:
+      - handle: audio_path
+        from_node:
+          - node_id: speech#1
+            output_handle: output_path

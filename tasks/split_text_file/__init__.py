@@ -1,18 +1,25 @@
 import re
+import os
 
-from oocana import Context
 from io import StringIO
 from .read import read
 from .nlp import NLP
 
-def main(params: dict, context: Context):
+def main(params: dict):
   file_path: str = params["file_path"]
   encoding: str | None = params["encoding"]
   chars_limit: int = params["chars_limit"]
+
+  file_name: str = os.path.basename(file_path)
+  file_name = os.path.splitext(file_name)[0]
   text = read(file_path, encoding)
   text = clean_text(text)
   fragments = list(split_text(text, chars_limit))
-  return { "fragments": fragments }
+
+  return {
+    "title": file_name,
+    "fragments": fragments,
+  }
 
 def clean_text(text: str):
   text = re.sub(r"(\s*\n)+", "\n", text)

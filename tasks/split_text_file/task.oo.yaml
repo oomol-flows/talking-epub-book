@@ -120,6 +120,9 @@ outputs_def:
       type: array
       items:
         type: string
+  - handle: title
+    json_schema:
+      type: string
 ui:
   default_width: 450
 executor:

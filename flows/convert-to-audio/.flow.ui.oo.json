@@ -1,9 +1,28 @@
 {
   "nodes": {
-    "convert-to-audio#1": {
+    "speech#1": {
+      "contentWidth": 413.3075034797966,
       "rfNode": {
         "position": {
-          "x": 439.0446146908252,
+          "x": 1474.278335299477,
+          "y": 125.26649509265737
+        }
+      }
+    },
+    "generate_speech_tasks#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 949.3299882031381,
+          "y": 125.26649509265737
+        }
+      }
+    },
+    "audio-preview#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1956.3777628500047,
           "y": 125.26649509265737
         }
       }
