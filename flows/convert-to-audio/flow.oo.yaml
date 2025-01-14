@@ -1,0 +1,12 @@
+nodes:
+  - task: self::split-text-file
+    title: "Convert file to audio #1"
+    node_id: convert-to-audio#1
+    inputs_from:
+      - handle: file_path
+        from_node:
+          []
+      - handle: encoding
+        value:
+      - handle: chars_limit
+        value: 700

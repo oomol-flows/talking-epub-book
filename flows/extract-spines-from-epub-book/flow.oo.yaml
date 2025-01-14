@@ -4,5 +4,7 @@ nodes:
     node_id: extract_spines_from_epub_book#1
     inputs_from:
       - handle: epub_file_path
+        value: /oomol-driver/oomol-storage/talking-epub-book/books/Sou Shen Ji - Shu Xia
+          Ye Hu.epub
       - handle: output_path
-        value:
+        value: /oomol-driver/oomol-storage/talking-epub-book/spines
