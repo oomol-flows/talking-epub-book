@@ -1,0 +1,10 @@
+nodes:
+  - task: self::extract_spines_from_epub_book
+    title: "Extract spines from epub book #1"
+    node_id: extract_spines_from_epub_book#1
+    inputs_from:
+      - handle: epub_file_path
+        value: /oomol-driver/oomol-storage/talking-epub-book/books/Sou Shen Ji - Shu Xia
+          Ye Hu.epub
+      - handle: output_path
+        value: /oomol-driver/oomol-storage/talking-epub-book/spines
