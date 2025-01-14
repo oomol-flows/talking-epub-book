@@ -8,12 +8,25 @@ nodes:
             type: string
             ui:widget: file
       outputs_def:
-        []
+        - handle: titles
+          json_schema:
+            type: array
+            items:
+              type: string
+        - handle: spine_paths
+          json_schema:
+            type: array
+            items:
+              type: string
+        - handle: output_dir_path
+          json_schema:
+            type: string
+            ui:widget: dir
       executor:
         name: python
         options:
           entry: scriptlets/+python#1.py
-    title: "Python #1"
+    title: "Extract spines from epub book"
     icon: ":logos:python:"
     node_id: +python#1
     inputs_from:
