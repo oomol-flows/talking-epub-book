@@ -11,6 +11,13 @@ scripts:
     python -m spacy download zh_core_web_sm
 dependencies:
   azure-speech: 0.0.2
-  oomol-file: 0.0.1
-  oomol-transform: 0.0.2
+  oomol-file: 0.0.2
+  oomol-transform: 0.0.3
   oomol-preview: 0.0.1
+  ffmpeg: 0.0.2
+name: talking-epub-book
+description: This project will help you read books using Azure speech and
+  generate audio files.
+displayName: Talking book
+repository: https://github.com/oomol-flows/talking-epub-book
+releaseNotes: init first version.

@@ -18,18 +18,34 @@ class NLP:
     self._lock: threading.Lock = threading.Lock()
     self._nlp_dict: dict[str, Language] = {}
 
+  def count_word(self, text: str):
+    nlp = self._language(text)
+    if nlp is None:
+      return len(text)
+    else:
+      count: int = 0
+      for chunk in nlp(text):
+        count += 1
+      return count
+
   def split_into_sents(self, text: str) -> list[str]:
+    nlp = self._language(text)
+    if nlp is None:
+      return self._split_into_sents(text)
+    else:
+      return [s.text for s in nlp(text).sents]
+
+  def _language(self, text: str):
     lan, _ = langid.classify(text)
     with self._lock:
       nlp = self._nlp_dict.get(lan, None)
       if nlp is None:
         model_id = _lan2model.get(lan, None)
         if model_id is None:
-          return self._split_into_sents(text)
+          return None
         nlp = spacy.load(model_id)
         self._nlp_dict[lan] = nlp
-
-    return [s.text for s in nlp(text).sents]
+    return nlp
 
   def _split_into_sents(self, text: str) -> list[str]:
     cells: list[str] = re.split(r"(\.|!|\?|;|。|！|？|；)", text)

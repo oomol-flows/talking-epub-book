@@ -1,7 +1,7 @@
 import os
 
 from lxml.etree import parse, Element, QName
-from .utils import escape_ascii
+from shared import escape_ascii
 
 class Spine:
   def __init__(self, folder_path, base_path, item):

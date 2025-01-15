@@ -52,3 +52,27 @@ nodes:
         from_node:
           - node_id: speech#1
             output_handle: output_path
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: fragments
+          description: Input
+          json_schema:
+            type: array
+            items:
+              type: string
+      outputs_def:
+        []
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#1.py
+    title: Word count
+    icon: ":logos:python:"
+    node_id: +python#1
+    inputs_from:
+      - handle: fragments
+        from_node:
+          - node_id: convert-to-audio#1
+            output_handle: fragments

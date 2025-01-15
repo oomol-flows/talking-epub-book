@@ -1,0 +1,81 @@
+nodes:
+  - task: ffmpeg::merged_audio
+    title: "Merged Audio #2"
+    node_id: merged_audio#2
+    inputs_from:
+      - handle: audio_files
+        from_node:
+          - node_id: +python#1
+            output_handle: files
+      - handle: name
+        value:
+        from_node:
+          - node_id: +python#1
+            output_handle: name
+      - handle: format
+        value: mp3
+      - handle: save_address
+        value:
+  - task: oomol-file::read-folder
+    title: "Read folder #1"
+    node_id: read-folder#1
+    inputs_from:
+      - handle: folder
+        value: /oomol-driver/oomol-storage/talking-epub-book/speech
+      - handle: sort
+        value: true
+      - handle: traverse
+        value: false
+      - handle: absolute_path
+        value: true
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: files
+          description: Input
+          json_schema:
+            type: array
+            items:
+              type: string
+              ui:widget: file
+        - handle: name
+          json_schema:
+            type: string
+          nullable: true
+      outputs_def:
+        - handle: files
+          description: Output
+          json_schema:
+            type: array
+            items:
+              type: string
+              ui:widget: file
+        - handle: name
+          json_schema:
+            type: string
+          nullable: true
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#1.py
+    title: Get name & files
+    icon: ":logos:python:"
+    node_id: +python#1
+    inputs_from:
+      - handle: files
+        value:
+          []
+        from_node:
+          - node_id: read-folder#1
+            output_handle: files
+      - handle: name
+        value:
+  - task: oomol-preview::audio-preview
+    title: "Audio preview #1"
+    node_id: audio-preview#1
+    inputs_from:
+      - handle: audio_path
+        from_node:
+          - node_id: merged_audio#2
+            output_handle: save_address

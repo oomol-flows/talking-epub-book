@@ -1,4 +1,9 @@
 {
+  "viewport": {
+    "x": -311.4755780741109,
+    "y": -74.26216176429845,
+    "zoom": 1.1854935774415023
+  },
   "nodes": {
     "extract_spines_from_epub_book#1": {
       "contentWidth": 450,

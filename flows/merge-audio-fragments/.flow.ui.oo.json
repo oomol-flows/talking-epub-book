@@ -1,0 +1,36 @@
+{
+  "viewport": {
+    "x": 15.06357759456148,
+    "y": 142.82820411191247,
+    "zoom": 0.5287359698133238
+  },
+  "nodes": {
+    "merged_audio#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1052,
+          "y": 216
+        }
+      }
+    },
+    "+python#1": {
+      "contentWidth": 466.669921875,
+      "rfNode": {
+        "position": {
+          "x": 491,
+          "y": 88
+        }
+      }
+    },
+    "audio-preview#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1568,
+          "y": 182
+        }
+      }
+    }
+  }
+}
