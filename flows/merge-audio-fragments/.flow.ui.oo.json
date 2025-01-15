@@ -1,4 +1,9 @@
 {
+  "viewport": {
+    "x": 15.06357759456148,
+    "y": 142.82820411191247,
+    "zoom": 0.5287359698133238
+  },
   "nodes": {
     "merged_audio#2": {
       "contentWidth": 450,
@@ -6,15 +11,6 @@
         "position": {
           "x": 1052,
           "y": 216
-        }
-      }
-    },
-    "read-folder#1": {
-      "contentWidth": 350,
-      "rfNode": {
-        "position": {
-          "x": 90,
-          "y": 88
         }
       }
     },

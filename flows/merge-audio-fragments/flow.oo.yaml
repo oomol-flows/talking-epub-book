@@ -21,8 +21,12 @@ nodes:
     node_id: read-folder#1
     inputs_from:
       - handle: folder
-      - handle: only_file_name
+      - handle: sort
+        value: true
+      - handle: traverse
         value: false
+      - handle: absolute_path
+        value: true
   - task:
       ui:
         default_width: 450
