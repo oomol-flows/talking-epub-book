@@ -21,7 +21,6 @@ nodes:
     node_id: read-folder#1
     inputs_from:
       - handle: folder
-        value: /oomol-driver/oomol-storage/talking-epub-book/speech
       - handle: sort
         value: true
       - handle: traverse

@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 icon: ":twemoji:speaking-head:currentColor:"
 scripts:
   # Script executed when the container is first loaded
@@ -20,4 +20,4 @@ description: This project will help you read books using Azure speech and
   generate audio files.
 displayName: Talking book
 repository: https://github.com/oomol-flows/talking-epub-book
-releaseNotes: init first version.
+releaseNotes: fix bug of parse epub file.
