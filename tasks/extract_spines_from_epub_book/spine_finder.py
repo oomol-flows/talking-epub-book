@@ -33,7 +33,9 @@ class Spines:
 
   def read(self) -> Generator[tuple[str | None, list[str]], None, None]:
     for title, path in self._spines:
-      yield title, list(parse_html(path).xpath("//text()"))
+      root = parse_html(path)
+      body_dom = root.find("body")
+      yield title, list(body_dom.xpath(".//text()"))
 
 def _unzip(file_path: str, unzip_path: str):
   with zipfile.ZipFile(file_path, "r") as zip_ref:
