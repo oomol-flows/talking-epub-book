@@ -1,24 +1,11 @@
 {
-  "viewport": {
-    "x": 15.06357759456148,
-    "y": 142.82820411191247,
-    "zoom": 0.5287359698133238
-  },
   "nodes": {
     "merged_audio#2": {
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 1052,
-          "y": 216
-        }
-      }
-    },
-    "read-folder#1": {
-      "rfNode": {
-        "position": {
-          "x": 0,
-          "y": 0
+          "x": 1107.8316814906032,
+          "y": 209.79647983437746
         }
       }
     },
@@ -26,17 +13,26 @@
       "contentWidth": 466.669921875,
       "rfNode": {
         "position": {
-          "x": 491,
-          "y": 88
+          "x": 548.3825615320089,
+          "y": 86.4491199585944
         }
       }
     },
-    "audio-preview#1": {
+    "dir_to_path_list#1": {
       "contentWidth": 450,
       "rfNode": {
         "position": {
-          "x": 1568,
-          "y": 182
+          "x": 13.957920372650761,
+          "y": 86.4491199585944
+        }
+      }
+    },
+    "audio_preview#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1634.03135677036,
+          "y": 124.09488211168772
         }
       }
     }

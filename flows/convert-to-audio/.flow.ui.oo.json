@@ -1,9 +1,4 @@
 {
-  "viewport": {
-    "x": -174.55014103550366,
-    "y": 44.04348659905628,
-    "zoom": 0.5534230120267465
-  },
   "nodes": {
     "convert-to-audio#1": {
       "rfNode": {
@@ -31,15 +26,6 @@
         }
       }
     },
-    "audio-preview#1": {
-      "contentWidth": 450,
-      "rfNode": {
-        "position": {
-          "x": 1956.3777628500047,
-          "y": 125.26649509265737
-        }
-      }
-    },
     "+python#1": {
       "contentWidth": 498.66932056100234,
       "rfNode": {
@@ -51,6 +37,15 @@
       "sections": {
         "scriptlet": {
           "cardCollapsed": true
+        }
+      }
+    },
+    "audio_preview#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1970.9837939426898,
+          "y": 125.26649509265737
         }
       }
     }

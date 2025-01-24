@@ -16,17 +16,6 @@ nodes:
         value: mp3
       - handle: save_address
         value:
-  - task: oomol-file::read-folder
-    title: "Read folder #1"
-    node_id: read-folder#1
-    inputs_from:
-      - handle: folder
-      - handle: sort
-        value: true
-      - handle: traverse
-        value: false
-      - handle: absolute_path
-        value: true
   - task:
       ui:
         default_width: 450
@@ -66,13 +55,24 @@ nodes:
         value:
           []
         from_node:
-          - node_id: read-folder#1
+          - node_id: dir_to_path_list#1
             output_handle: files
       - handle: name
         value:
-  - task: oomol-preview::audio-preview
+  - task: oomol-file::dir_to_path_list
+    title: "Read folder #1"
+    node_id: dir_to_path_list#1
+    inputs_from:
+      - handle: folder
+      - handle: sort
+        value: true
+      - handle: traverse
+        value: false
+      - handle: absolute_path
+        value: true
+  - task: oomol-preview::audio_preview
     title: "Audio preview #1"
-    node_id: audio-preview#1
+    node_id: audio_preview#1
     inputs_from:
       - handle: audio_path
         from_node:
